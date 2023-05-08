@@ -9,7 +9,4 @@ async function logIn() {
         email: email.value,
         password: password.value,
     })
-    if(data) {
-      wrapper.classList.remove('hide')
-    }
 }
