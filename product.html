@@ -24,7 +24,7 @@
         </div>
         <div class="controls">
           <a href="profile.html" class="icon cabinet"></a>
-          <a href="favourite.html" class="icon favourite"></a>
+          <a href="profile.html" class="icon favourite"></a>
           <a href="cart.html" class="icon cart"></a>
         </div>
       </div>
@@ -44,11 +44,11 @@
           <div class="sizes">
             <h1>Выберите размер:</h1>
             <div class="list">
-              <div class="size xs">XS</div>
-              <div class="size s">S</div>
-              <div class="size m">M</div>
-              <div class="size l">L</div>
-              <div class="size xl">XL</div>
+              <div class="size xs" onclick="setSize(this)">XS</div>
+              <div class="size s" onclick="setSize(this)">S</div>
+              <div class="size m" onclick="setSize(this)">M</div>
+              <div class="size l" onclick="setSize(this)">L</div>
+              <div class="size xl" onclick="setSize(this)">XL</div>
             </div>
           </div>
           <div class="ammount">
@@ -58,7 +58,7 @@
           </div>
           <div class="controls">
             <button>Купить</button>
-            <div class="favourite"></div>
+            <div class="favouriteBtn" onclick="setFavourite(this)"></div>
           </div>
           <div class="structure">
             <p>Состав: <span class="composition"></span></p>

@@ -549,6 +549,11 @@ html {
       gap: 8px;
       a {
         font-size: 24px;
+        transition: .3s;
+        &:hover {
+          opacity: .7;
+          cursor: pointer;
+        } 
       }
     }
     .grid {
@@ -568,10 +573,15 @@ html {
       border-radius: 5px;
       font-size: 24px;
       padding-top: 4px;
-      cursor: pointer;
       max-width: 300px;
       width: 100%;
       margin: auto;
+      transition: .3s;
+      cursor: pointer;
+      &:hover {
+        background-color: #8CEB14;
+        color: black;
+      }
     }
     input {
       width: 290px;
@@ -597,13 +607,15 @@ html {
     transition: 0.3s;
     box-sizing: border-box;
     padding: 10px;
+    width: fit-content;
+    height: fit-content;
     img {
       border-radius: 8px;
-      object-fit: cover;
-      max-width: 636px;
-      width: 100%;
+      object-fit: contain;
+      width: 636px;
+      height: 636px;
       background-color: white;
-      padding: 10px;
+      box-sizing: border-box;
     }
   }
   .details {
@@ -728,7 +740,7 @@ html {
           color: black;
         }
       }
-      .favourite {
+      .favouriteBtn {
         background: url('/assets/icons/favourite_empty.svg');
         width: 24px;
         height: 24px;
@@ -795,3 +807,139 @@ html {
     text-align: center;
   }
 }
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .profile_title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    h1, p {
+      font-size: 40px;
+      font-weight: 400;
+    }
+  }
+  .favourites {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    .title {
+      p {
+        font-size: 32px;
+        font-weight: 400;
+      }
+    }
+    .favourites_list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 20px;
+    }
+  }
+  .order_history {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .title {
+      p {
+        font-size: 32px;
+        font-weight: 400;
+      }
+    }
+    .order_history_list {
+      .order-item {
+        width: 100%;
+        height: 118px;
+        border-radius: 5px;
+        outline: 2px solid #8CEB14;
+        box-sizing: border-box;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        .item-info {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .image-block {
+            border-radius: 5px;
+            background-color: white;
+            width: 102px;
+            height: 98px;
+            img {
+              border-radius: 5px;
+              object-fit: cover;
+              width: 102px;
+              height: 98px;
+            }
+          }
+          .text {
+            p {
+              font-size: 40px;
+              font-weight: 400;
+            }
+            .details {
+              display: flex;
+              justify-content: space-between;
+              width: fit-content;
+              p {
+                font-size: 24px;
+                font-weight: 400;
+              }
+              .price {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                margin-left: 10px;
+                p {
+                  font-size: 24px;
+                  font-weight: 400;
+                  padding-top: 3px;
+                }
+                img {
+                  width: 14px;
+                  height: 19px;
+                }
+              }
+            }
+          }
+        }
+        .order-info {
+          display: flex;
+          justify-content: space-between;
+          max-width: 500px;
+          align-items: center;
+          width: 100%;
+          p {
+            font-size: 32px;
+            font-weight: 400;
+          }
+          .price {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            p {
+              padding-top: 3px;
+              font-weight: 400;
+              font-size: 32px;
+            }
+            img {
+              width: 17px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.empty {
+  display: none;
+  font-size: 32px;
+  font-weight: 400;
+  &.true {
+    display: block;
+  }
+}
+

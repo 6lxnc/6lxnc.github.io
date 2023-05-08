@@ -513,6 +513,11 @@ html {
 }
 .form form .links a {
   font-size: 24px;
+  transition: 0.3s;
+}
+.form form .links a:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 .form form .grid {
   flex: 1 0 21%;
@@ -531,10 +536,15 @@ html {
   border-radius: 5px;
   font-size: 24px;
   padding-top: 4px;
-  cursor: pointer;
   max-width: 300px;
   width: 100%;
   margin: auto;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.form form button:hover {
+  background-color: #8CEB14;
+  color: black;
 }
 .form form input {
   width: 290px;
@@ -559,15 +569,19 @@ html {
   transition: 0.3s;
   box-sizing: border-box;
   padding: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .item .image-block img {
   border-radius: 8px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: 636px;
-  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 636px;
+  height: 636px;
   background-color: white;
-  padding: 10px;
+  box-sizing: border-box;
 }
 .item .details {
   display: flex;
@@ -695,20 +709,20 @@ html {
   cursor: pointer;
   color: black;
 }
-.item .details .controls .favourite {
+.item .details .controls .favouriteBtn {
   background: url("/assets/icons/favourite_empty.svg");
   width: 24px;
   height: 24px;
   transition: 0.3s;
 }
-.item .details .controls .favourite:hover {
+.item .details .controls .favouriteBtn:hover {
   background: url("/assets/icons/favourite_hover.svg");
   cursor: pointer;
 }
-.item .details .controls .favourite.inFavourite {
+.item .details .controls .favouriteBtn.inFavourite {
   background: url("/assets/icons/favourite_hover.svg");
 }
-.item .details .controls .favourite.inFavourite:hover {
+.item .details .controls .favouriteBtn.inFavourite:hover {
   background: url("/assets/icons/favourite_empty_hover.svg");
 }
 .item .details .structure {
@@ -754,4 +768,133 @@ html {
   font-size: 32px;
   font-weight: 400;
   text-align: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.profile .profile_title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.profile .profile_title h1, .profile .profile_title p {
+  font-size: 40px;
+  font-weight: 400;
+}
+.profile .favourites {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.profile .favourites .title p {
+  font-size: 32px;
+  font-weight: 400;
+}
+.profile .favourites .favourites_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+}
+.profile .order_history {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile .order_history .title p {
+  font-size: 32px;
+  font-weight: 400;
+}
+.profile .order_history .order_history_list .order-item {
+  width: 100%;
+  height: 118px;
+  border-radius: 5px;
+  outline: 2px solid #8CEB14;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.profile .order_history .order_history_list .order-item .item-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.profile .order_history .order_history_list .order-item .item-info .image-block {
+  border-radius: 5px;
+  background-color: white;
+  width: 102px;
+  height: 98px;
+}
+.profile .order_history .order_history_list .order-item .item-info .image-block img {
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 102px;
+  height: 98px;
+}
+.profile .order_history .order_history_list .order-item .item-info .text p {
+  font-size: 40px;
+  font-weight: 400;
+}
+.profile .order_history .order_history_list .order-item .item-info .text .details {
+  display: flex;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.profile .order_history .order_history_list .order-item .item-info .text .details p {
+  font-size: 24px;
+  font-weight: 400;
+}
+.profile .order_history .order_history_list .order-item .item-info .text .details .price {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: 10px;
+}
+.profile .order_history .order_history_list .order-item .item-info .text .details .price p {
+  font-size: 24px;
+  font-weight: 400;
+  padding-top: 3px;
+}
+.profile .order_history .order_history_list .order-item .item-info .text .details .price img {
+  width: 14px;
+  height: 19px;
+}
+.profile .order_history .order_history_list .order-item .order-info {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  align-items: center;
+  width: 100%;
+}
+.profile .order_history .order_history_list .order-item .order-info p {
+  font-size: 32px;
+  font-weight: 400;
+}
+.profile .order_history .order_history_list .order-item .order-info .price {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.profile .order_history .order_history_list .order-item .order-info .price p {
+  padding-top: 3px;
+  font-weight: 400;
+  font-size: 32px;
+}
+.profile .order_history .order_history_list .order-item .order-info .price img {
+  width: 17px;
+  height: 18px;
+}
+
+.empty {
+  display: none;
+  font-size: 32px;
+  font-weight: 400;
+}
+.empty.true {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

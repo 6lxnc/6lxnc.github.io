@@ -41,14 +41,16 @@ function minusAmmount() {
   }
 }
 
-async function isFavourite() {
-  // const favouriteBtn = document.querySelector('.favourite')
-  // const { data: { user } } = await sp.auth.getUser()
-  // if(user != null) {
-  //   favouriteBtn.classList.add('inFavourite')
-  // }else {
+const favouriteBtn = document.querySelector('.favouriteBtn')
 
-  // }
+async function isFavourite() {
+  const { data: { user } } = await sp.auth.getUser()
+  if(user != null) {
+    const { data: favourite_item, error: favourite_item_error} = await sp.from('favourites').select('*').eq('user_id', user.id).eq('item', localStorage.getItem('currentItem'))
+    if(favourite_item.length > 0) {
+      favouriteBtn.classList.add('inFavourite')
+    }
+  }
 }
 
 const itemList = document.querySelector('.recommendations_list')
@@ -137,8 +139,30 @@ function generateRecommendations() {
   })
 }
 
+async function setFavourite(elem) {
+  const { data: {user} } = await sp.auth.getUser()
 
+  if(elem.classList.contains('inFavourite')) {
+    const { error } = await sp.from('favourites').delete().eq('user_id', user.id).eq('item', localStorage.getItem('currentItem'))
+    if(error == null) {
+      favouriteBtn.classList.remove('inFavourite')
+    }
+  }else {
+    const { error } = await sp.from('favourites').insert({ user_id: user.id, item: localStorage.getItem('currentItem') })
+    if(error == null) {
+      favouriteBtn.classList.add('inFavourite')
+    }
+  }
+}
 
+function setSize(size) {
+  const sizes = document.querySelectorAll('.size')
+  sizes.forEach((elem) => {
+    elem.classList.remove('clicked')
+  })
+  size.classList.add('clicked')
+  
+}
 
 
 

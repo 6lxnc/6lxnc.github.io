@@ -71,9 +71,11 @@ async function fetchItems ()
     }
     
     item.addEventListener('click', (elem) => {
-      setCurrentItem(elem.target.parentNode.getAttribute('code'))
-      if(elem.target.parentNode.classList.contains('product')) {
-        window.location.replace('/product.html')
+      if(!item.classList.contains('sold-out')) {
+        setCurrentItem(elem.target.parentNode.getAttribute('code'))
+        if(elem.target.parentNode.classList.contains('product')) {
+          window.location.replace('/product.html')
+        }
       }
     })
   })
