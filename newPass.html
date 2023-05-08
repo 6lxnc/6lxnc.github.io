@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сайленс</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="full form">
+      <a href="/" class="back">Назад</a>
+      <form method="dialog">
+        <h2 class="title">Восстановление пароля</h2>
+        <input required type="text" class="newPassword" placeholder="Новый пароль" />
+        <button type="submit" onclick="updateUser()">Изменить</button>
+        <div class="links">
+          <a href="/login">Войти</a>
+        </div>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/scripts/resetPassword.js"></script>
+  </body>
+</html>

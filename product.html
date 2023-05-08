@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сайленс</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <img src="/assets/logo.png" alt="" />
+        <div class="menu">
+          <a href="/#catalogue">Каталог</a>
+          <a href="/delivery">Доставка и оплата</a>
+          <a href="/band">Группа</a>
+          <a href="/faq">FAQ</a>
+        </div>
+        <div class="controls">
+          <a href="profile.html" class="icon cabinet"></a>
+          <a href="favourite.html" class="icon favourite"></a>
+          <a href="cart.html" class="icon cart"></a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="image-block">
+          <img src="" alt="">
+        </div>
+        <div class="details">
+          <div class="info">
+            <h1 class="name"></h1>
+            <h3 class="type"></h3>
+            <div class="price">
+              <h2></h2>
+              <img src="/assets/icons/ruble.svg" alt="">
+            </div>
+          </div>
+          <div class="sizes">
+            <h1>Выберите размер:</h1>
+            <div class="list">
+              <div class="size xs">XS</div>
+              <div class="size s">S</div>
+              <div class="size m">M</div>
+              <div class="size l">L</div>
+              <div class="size xl">XL</div>
+            </div>
+          </div>
+          <div class="ammount">
+            <button class="minus" onclick="minusAmmount()">-</button>
+            <input class="ammount_input" min="1" max="9" type="number" disabled value="1">
+            <button class="plus" onclick="plusAmmount()">+</button>
+          </div>
+          <div class="controls">
+            <button>Купить</button>
+            <div class="favourite"></div>
+          </div>
+          <div class="structure">
+            <p>Состав: <span class="composition"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="recommendations">
+        <h2 class="title">РЕКОМЕНДУЕМ</h2>
+        <div class="recommendations_list">
+          
+        </div>
+      </div>
+      <!--  -->
+      <div class="footer">
+        <aside>
+          <img src="/assets/logo_footer.png" alt="" />
+        </aside>
+        <section>
+          <div class="socials">
+            <div class="icon inst"></div>
+            <div class="icon vk"></div>
+            <div class="icon tg"></div>
+          </div>
+          <div class="footer-menu">
+            <a href="/#catalogue">Каталог</a>
+            <span>/</span>
+            <a href="/delivery">Доставка и оплата</a>
+            <span>/</span>
+            <a href="/band">Группа</a>
+            <span>/</span>
+            <a href="/faq">FAQ</a>
+          </div>
+          <div class="copyright">
+            <p>Все права защищены</p>
+            <img src="/assets/icons/copy.svg" alt="copy" />
+            <p>2023 »Сайленс«</p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/scripts/product.js"></script>
+  </body>
+</html>
