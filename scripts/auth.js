@@ -9,4 +9,7 @@ async function logIn() {
         email: email.value,
         password: password.value,
     })
+    if(data) {
+      window.location.replace('/profile.html')
+    }
 }

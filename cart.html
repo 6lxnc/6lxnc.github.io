@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сайленс</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <img src="/assets/logo.png" alt="" />
+        <div class="menu">
+          <a href="/#catalogue">Каталог</a>
+          <a href="/delivery">Доставка и оплата</a>
+          <a href="/band">Группа</a>
+          <a href="/faq">FAQ</a>
+        </div>
+        <div class="controls">
+          <a href="profile.html" class="icon cabinet"></a>
+          <a href="profile.html" class="icon favourite"></a>
+          <a href="cart.html" class="icon cart"></a>
+        </div>
+      </div>
+      <div class="cart_page">
+        <section>
+            <header>
+                <p>Корзина</p>
+            </header>
+            <section class="delivery_info">
+                <div class="title">
+                    <p>Данные о доставке</p>
+                </div>
+                <div class="inputs">
+                    <input type="text" required placeholder="Страна *">
+                    <input type="text" placeholder="Область">
+                    <input type="text" required placeholder="Город *">
+                </div>
+            </section>
+            <section class="delivery_method">
+                <div class="title">
+                    <p>Способы доставки</p>
+                </div>
+                <article>
+                    <img src="/assets/icons/sdek.png" alt="">
+                    <p class="where">До двери / до отделения</p>
+                    <p class="duration">от 3 до 5 дней</p>
+                    <div class="price">
+                        <p>от 700</p>
+                        <img src="/assets/icons/ruble.svg" alt="">
+                    </div>
+                    <button class="delivery_method_btn clicked" price="700" onclick="setDeliveryMethod(this)">Выбрать</button>
+                </article>
+                <article>
+                    <img src="/assets/icons/rupost.png" alt="">
+                    <p class="where">до отделения</p>
+                    <p class="duration">от 3 до 5 дней</p>
+                    <div class="price">
+                        <p>от 360</p>
+                        <img src="/assets/icons/ruble.svg" alt="">
+                    </div>
+                    <button class="delivery_method_btn" price="360" onclick="setDeliveryMethod(this)">Выбрать</button>
+                </article>
+            </section>
+            <section class="recipient">
+                <div class="title">
+                    <p>Получатель</p>
+                </div>
+                <div class="inputs">
+                    <input type="text" placeholder="Фамилия *" required>
+                    <input type="text" placeholder="Имя *" required>
+                    <input type="text" placeholder="Отчество">
+                    <input type="number" placeholder="Номер телефона *" required>
+                    <input type="email" placeholder="email *" required>
+                    <input type="number" placeholder="Дополнительный телефон">
+                    <input type="text" placeholder="улица *" required>
+                    <input type="text" placeholder="дом *" required>
+                    <input type="number" placeholder="квартира *" required>
+                    <input type="number" placeholder="индекс *" required>
+                </div>
+            </section>
+        </section>
+        <aside>
+            <div class="title">
+                <p>Итого</p>
+            </div>
+            <div class="cart_items_list">
+                
+            </div>
+            <div class="details">
+                <div class="items_total">
+                    <h1>Стоимость товаров</h1>
+                    <div class="price">
+                        <p>1213</p>
+                        <img src="/assets/icons/ruble.svg" alt="">
+                    </div>
+                </div>
+                <div class="delivery_info">
+                    <h1>Доставка</h1>
+                    <div class="price">
+                        <p>700</p>
+                        <img src="/assets/icons/ruble.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="total">
+                <p>123123</p>
+                <img src="/assets/icons/ruble.svg" alt="">
+            </div>
+            <button>Оплатить</button>
+        </aside>
+      </div>
+      <h1 class="empty e-cart">У вас пока нет товаров в корзине</h1>
+      <div class="footer">
+        <aside>
+          <img src="/assets/logo_footer.png" alt="" />
+        </aside>
+        <section>
+          <div class="socials">
+            <div class="icon inst"></div>
+            <div class="icon vk"></div>
+            <div class="icon tg"></div>
+          </div>
+          <div class="footer-menu">
+            <a href="/#catalogue">Каталог</a>
+            <span>/</span>
+            <a href="/delivery">Доставка и оплата</a>
+            <span>/</span>
+            <a href="/band">Группа</a>
+            <span>/</span>
+            <a href="/faq">FAQ</a>
+          </div>
+          <div class="copyright">
+            <p>Все права защищены</p>
+            <img src="/assets/icons/copy.svg" alt="copy" />
+            <p>2023 »Сайленс«</p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/scripts/cart.js"></script>
+</body>
+</html>

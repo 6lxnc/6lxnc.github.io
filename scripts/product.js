@@ -142,26 +142,51 @@ function generateRecommendations() {
 async function setFavourite(elem) {
   const { data: {user} } = await sp.auth.getUser()
 
-  if(elem.classList.contains('inFavourite')) {
-    const { error } = await sp.from('favourites').delete().eq('user_id', user.id).eq('item', localStorage.getItem('currentItem'))
-    if(error == null) {
-      favouriteBtn.classList.remove('inFavourite')
+  if(user != null) {
+    if(elem.classList.contains('inFavourite')) {
+      const { error } = await sp.from('favourites').delete().eq('user_id', user.id).eq('item', localStorage.getItem('currentItem'))
+      if(error == null) {
+        favouriteBtn.classList.remove('inFavourite')
+      }
+    }else {
+      const { error } = await sp.from('favourites').insert({ user_id: user.id, item: localStorage.getItem('currentItem') })
+      if(error == null) {
+        favouriteBtn.classList.add('inFavourite')
+      }
     }
   }else {
-    const { error } = await sp.from('favourites').insert({ user_id: user.id, item: localStorage.getItem('currentItem') })
-    if(error == null) {
-      favouriteBtn.classList.add('inFavourite')
-    }
+    window.location.replace('/profile.html')
   }
+
 }
 
+const sizes = document.querySelectorAll('.size')
 function setSize(size) {
-  const sizes = document.querySelectorAll('.size')
   sizes.forEach((elem) => {
     elem.classList.remove('clicked')
   })
   size.classList.add('clicked')
   
+}
+
+function addToCart() {
+  const amount = document.querySelector('.ammount_input')
+  sizes.forEach((elem) => {
+    if(elem.classList.contains('clicked')) {
+      let cart = []
+      let item = {item: Number(localStorage.getItem('currentItem')), amount: Number(amount.value)}
+      if(localStorage.getItem('cart')) {
+        let old_cart = JSON.parse(localStorage.getItem('cart'))
+        old_cart.push(item)
+        localStorage.setItem('cart', JSON.stringify(old_cart))
+      }else {
+        cart.push(item)
+        localStorage.setItem('cart', JSON.stringify(cart))
+      }
+    }else {
+      console.log('empty');
+    }
+  })
 }
 
 

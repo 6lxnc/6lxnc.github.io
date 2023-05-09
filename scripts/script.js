@@ -46,7 +46,7 @@ async function fetchItems ()
       item.classList.add('sold-out')
     }
 
-    if (dataItem.sale != null || dataItem.sale == 0 && dataItem.ammount >= 1) {
+    if (dataItem.sale != null || dataItem.sale > 0 && dataItem.ammount >= 1) {
       item.classList.add('sale')
       imageBlock.setAttribute('data-sale', `sale ${dataItem.sale}%`)
       p.setAttribute('data-price', `${dataItem.price}`)
@@ -72,10 +72,8 @@ async function fetchItems ()
     
     item.addEventListener('click', (elem) => {
       if(!item.classList.contains('sold-out')) {
-        setCurrentItem(elem.target.parentNode.getAttribute('code'))
-        if(elem.target.parentNode.classList.contains('product')) {
-          window.location.replace('/product.html')
-        }
+        setCurrentItem(elem.target.closest('.product').getAttribute('code'))
+        window.location.replace('/product.html')
       }
     })
   })
