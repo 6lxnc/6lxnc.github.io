@@ -13,9 +13,7 @@ async function signUp() {
         email: email.value,
         password: password.value
     })
-    if(data) {
-      wrapper.classList.remove('hide')
-    }else {
+    if(!data) {
         alert('Произошла ошибка! Попробуйте ещё раз.')
     }
 }
