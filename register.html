@@ -18,14 +18,16 @@
       <form method="dialog">
         <h2 class="title">РЕГИСТРАЦИЯ</h2>
         <div class="grid">
-          <input required type="email" class="email" placeholder="Email" />
-          <input required type="password" class="password" placeholder="Пароль" />
+          <div class="fields">
+            <input required type="email" class="email" placeholder="Email" />
+            <input required type="password" class="password" placeholder="Пароль" />
+          </div>
+          <button type="submit" onclick="signUp()">Зарегистрироваться</button>
         </div>
         <p class="agree">
           продолжая регистрацию, вы подтверждаете своё согласие с
           пользовательским соглашением
         </p>
-        <button type="submit" onclick="signUp()">Зарегистрироваться</button>
         <div class="links">
           <a href="/login">Войти</a>
         </div>

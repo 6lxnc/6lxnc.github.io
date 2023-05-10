@@ -14,20 +14,22 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="header">
-        <img src="/assets/logo.png" alt="" />
-        <div class="menu">
-          <a href="/#catalogue">Каталог</a>
-          <a href="/delivery">Доставка и оплата</a>
-          <a href="/band">Группа</a>
-          <a href="/faq">FAQ</a>
+      <div class="open-mobile-menu"></div>
+      <div class="header" id="header">
+          <div class="close-mobile-menu"></div>
+          <img src="/assets/logo.png" alt="" />
+          <div class="menu">
+            <a href="/#catalogue">Каталог</a>
+            <a href="/delivery">Доставка и оплата</a>
+            <a href="/band">Группа</a>
+            <a href="/faq">FAQ</a>
+          </div>
+          <div class="controls">
+            <a href="profile.html" class="icon cabinet"></a>
+            <a href="profile.html" class="icon favourite"></a>
+            <a href="cart.html" class="icon cart"></a>
+          </div>
         </div>
-        <div class="controls">
-          <a href="profile.html" class="icon cabinet"></a>
-          <a href="profile.html" class="icon favourite"></a>
-          <a href="cart.html" class="icon cart"></a>
-        </div>
-      </div>
       <div class="cart_page">
         <section>
             <header>
@@ -146,5 +148,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/scripts/cart.js"></script>
+    <script src="/scripts/burger-menu.js"></script>
 </body>
 </html>
